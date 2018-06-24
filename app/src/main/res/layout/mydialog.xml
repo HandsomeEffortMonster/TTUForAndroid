@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:baselineAligned="false">
+    <TextView
+        android:text="编辑模拟量名称"
+        android:textSize="30dp"
+        android:gravity="center"
+        android:textColor="#ffffff"
+        android:background="#0bcaf9"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+    <EditText
+        android:textSize="20dp"
+        android:id="@+id/et_name"
+        android:layout_marginTop="15dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="例如温度、湿度等" />
+    <TextView
+        android:text="检测模拟量单位"
+        android:textSize="30dp"
+        android:gravity="center"
+        android:textColor="#ffffff"
+        android:background="#0bcaf9"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+    <EditText
+        android:textSize="20dp"
+        android:id="@+id/et_unit"
+        android:layout_marginTop="15dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="例如V、A等" />
+    <TextView
+        android:text="模拟量传入调参"
+        android:textSize="30dp"
+        android:gravity="center"
+        android:textColor="#ffffff"
+        android:background="#0bcaf9"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+    <EditText
+        android:textSize="20dp"
+        android:id="@+id/et_parameter"
+        android:layout_marginTop="15dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="设置AD除以的参数" />
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+        <Button
+            android:id="@+id/btn_dialogCancle"
+            android:text="取消"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FFEE1D66"/>
+        <Button
+            android:id="@+id/btn_dialogConfirm"
+            android:text="确定"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FFEE1D66"
+            android:layout_toRightOf="@+id/btn_dialogCancle"/>
+    </RelativeLayout>
+</LinearLayout>

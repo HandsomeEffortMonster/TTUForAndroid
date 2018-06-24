@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView  xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/backgroundpink"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/main_goElectric"
+            android:layout_width="600px"
+            android:layout_height="wrap_content"
+
+            android:layout_margin="5dip"
+            android:layout_weight="1"
+            android:background="@drawable/btn_nor_down"
+            android:text="实时电能信息" />
+
+        <Button
+            android:id="@+id/btn_goDCConfig"
+            android:layout_width="600px"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/main_goElectric"
+
+            android:layout_margin="5dip"
+            android:layout_weight="1"
+            android:background="@drawable/btn_nor_down"
+            android:text="直流模拟量配置"/>
+        <Button
+            android:id="@+id/btn_stateShow"
+            android:layout_width="600px"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_goDCConfig"
+
+            android:layout_margin="5dip"
+            android:layout_weight="1"
+            android:background="@drawable/btn_nor_down"
+            android:text="状态量显示"/>
+        <Button
+            android:id="@+id/btn_goConfigInfo"
+            android:layout_width="600px"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_stateShow"
+
+            android:layout_margin="5dip"
+            android:layout_weight="1"
+            android:background="@drawable/btn_nor_down"
+            android:text="系统信息显示"/>
+        <Button
+            android:id="@+id/btn_goInfoConfiguration"
+            android:layout_width="600px"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_goConfigInfow"
+
+            android:layout_margin="5dip"
+            android:layout_weight="1"
+            android:background="@drawable/btn_nor_down"
+            android:text="系统信息配置"/>
+    </LinearLayout>
+</ScrollView>

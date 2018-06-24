@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgroundpink"
+    tools:context="com.game.serialport.BootstrapGoActivity">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <AnalogClock
+                android:id="@+id/ac"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/text_date"
+                android:layout_width="wrap_content"
+                android:layout_height="50px"
+                android:text=" 年 月 日"
+                android:textColor="#FF8000"
+                android:textSize="40px"
+                android:textStyle="bold" />
+            <DigitalClock
+                android:id="@+id/dc"
+                android:layout_width="wrap_content"
+                android:layout_height="50px"
+                android:textColor="#0080FF"
+                android:textSize="40px"
+                android:textStyle="bold" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="70px"
+                android:text="智能配变终端"
+                android:textColor="#AE57A4"
+                android:textSize="50px"
+                android:textStyle="bold"
+                android:gravity="center"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="30px"
+                android:textColor="#000000"
+                android:text="版本1.0.0"
+                />
+        </LinearLayout>
+
+
+
+</android.support.constraint.ConstraintLayout>

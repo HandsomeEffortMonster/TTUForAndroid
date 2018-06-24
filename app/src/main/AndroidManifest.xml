@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.game.serialport">
+
+    <application
+        android:name=".myApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+
+        <!-- 主界面 -->
+        <activity android:name=".MainActivity" />
+        <!-- 中间中转界面 -->
+        <activity android:name=".SerialPortActivity" />
+        <!-- 电能信息实时界面 -->
+        <activity android:name=".ElectricActivity" />
+        <!-- 注册ttys2串口服务 -->
+        <service
+            android:name="com.lzh.Service.SerialPortService"
+            android:enabled="true"
+            android:exported="false" />
+        <!-- 历史记录界面 -->
+        <activity android:name=".HistoricalActivity" />
+        <!-- 直流模拟量界面 -->
+        <activity android:name=".dcAnalogActivity" />
+        <!-- 注册ttys2串口服务 -->
+        <service
+            android:name="com.lzh.Service.SerialPortTtys1Service"
+            android:enabled="true"
+            android:exported="false" />
+        <!-- 开机启动界面 -->
+        <activity android:name=".BootstrapGoActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ThrowOverActivity" />
+        <activity android:name=".StateShowActivity" />
+
+        <service
+            android:name="com.lzh.Service.SerialPortTtys0Service"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity android:name=".ConfigInfoActivity" />
+        <activity android:name=".InfoToConfigActivity"></activity>
+    </application>
+
+</manifest>

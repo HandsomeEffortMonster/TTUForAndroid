@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+    <TextView
+        android:id="@+id/tv_infoconfigname"
+        android:layout_width="250px"
+        android:layout_height="wrap_content"
+        android:text="配置名称"
+        android:gravity="center"
+        />
+    <TextView
+        android:id="@+id/tv_infoconfigcontent"
+        android:layout_width="300px"
+        android:layout_height="wrap_content"
+        android:text="配置内容"
+        android:gravity="center"
+
+        />
+    <Button
+        android:id="@+id/btn_changeinfocofig"
+        android:layout_width="200px"
+        android:layout_height="wrap_content"
+        android:text="修改"
+
+        android:layout_margin="5dip"
+        android:layout_weight="1"
+        android:background="@drawable/btn_nor_down"/>
+</LinearLayout>

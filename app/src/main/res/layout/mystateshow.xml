@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+
+        <TextView
+            android:id="@+id/tv_swtichingState"
+            android:layout_width="200px"
+            android:layout_height="60px"
+            android:text="状态量"
+            android:textSize="40px"
+            android:gravity="center"
+            android:layout_marginRight="40px"
+            />
+
+        <TextView
+            android:id="@+id/tv_swtichingShow"
+            android:layout_width="200px"
+            android:layout_height="60px"
+            android:background="#53FF53"
+            android:gravity="center"
+            android:layout_marginRight="40px"/>
+
+        <Button
+            android:id="@+id/btn_handOpen"
+            android:layout_width="150px"
+            android:layout_height="60px"
+            android:gravity="center"
+            android:layout_marginRight="40px"
+            android:text="手动打开"
+            android:textSize="20px"
+
+            android:layout_margin="5dip"
+            android:layout_weight="1"
+            android:background="@drawable/btn_nor_down"
+           />
+
+        <Button
+            android:id="@+id/btn_handClose"
+            android:layout_width="150px"
+            android:layout_height="60px"
+            android:gravity="center"
+            android:text="手动关闭"
+            android:textSize="20px"
+
+            android:layout_margin="5dip"
+            android:layout_weight="1"
+            android:background="@drawable/btn_nor_down"/>
+
+</LinearLayout>
