@@ -48,8 +48,7 @@ public class StateShowActivity extends AppCompatActivity implements View.OnClick
         setContentView(R.layout.activity_state_show);
         context = StateShowActivity.this;
         init();
-        //启动服务
-        startService(new Intent(StateShowActivity.this, SerialPortTtys0Service.class));
+
         //注册广播接收器
         //这里通过Handler解决android 的ANR 问题  非常关键 一般不推荐直接在onReceive中去直接操作activity  用handler让UIthread工作
         sttys0Receiver = new Sttys0Receiver(new Handler());
@@ -60,8 +59,7 @@ public class StateShowActivity extends AppCompatActivity implements View.OnClick
 
     @Override
     protected void onDestroy(){
-        //结束服务
-        stopService(new Intent(StateShowActivity.this,SerialPortTtys1Service.class));
+
         if(sttys0Receiver != null){
             unregisterReceiver(sttys0Receiver);
             //及时销毁广播 非常必要 receiver绑定了activity的引用

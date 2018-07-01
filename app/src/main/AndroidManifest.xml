@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.game.serialport">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:name=".myApplication"
         android:allowBackup="true"
@@ -40,14 +43,15 @@
         </activity>
         <activity android:name=".ThrowOverActivity" />
         <activity android:name=".StateShowActivity" />
-
+        <!-- android:enabled="true"能否给其他提供者使用 android:exported="true"是否启用 -->
         <service
             android:name="com.lzh.Service.SerialPortTtys0Service"
             android:enabled="true"
-            android:exported="true" />
+            android:exported="false" />
 
         <activity android:name=".ConfigInfoActivity" />
-        <activity android:name=".InfoToConfigActivity"></activity>
+        <activity android:name=".InfoToConfigActivity" />
+        <activity android:name=".LoginActivity"></activity>
     </application>
 
 </manifest>

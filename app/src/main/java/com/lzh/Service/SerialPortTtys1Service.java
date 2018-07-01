@@ -19,6 +19,7 @@ import android_serialport_api.SerialUtilOld;
  */
 public class SerialPortTtys1Service extends Service {
 
+    private static final String TAG ="SerialPortTtys1Service";
     SerialUtilOld serialPort_ttyS1;
     private String path = "/dev/ttyS1";
     private int baudrate = 115200;
@@ -26,6 +27,8 @@ public class SerialPortTtys1Service extends Service {
     private byte[] error = new byte[]{-1,-1};
     /*
     * 广播传值 onbind
+    * 绑定服务时才会调用
+     * 必须要实现的方法
     * */
     @Nullable
     @Override
@@ -35,7 +38,8 @@ public class SerialPortTtys1Service extends Service {
         return null;
     }
     /*
-    * 创建时建立线程和serialport对象
+    * 创建时建立线程和serialport对象  首次创建服务时，系统将调用此方法来执行一次性设置程序（在调用 onStartCommand() 或 onBind() 之前）。
+     * 如果服务已在运行，则不会调用此方法。该方法只被调用一次
     * */
     @Override
     public void onCreate(){
@@ -51,7 +55,7 @@ public class SerialPortTtys1Service extends Service {
             readThread = new ReadThread();
             readThread.start();
         }
-        Log.d("Sttys1Service","oncreate executed");
+        Log.d(TAG,"oncreate executed");
     }
 
     @Override
@@ -63,11 +67,19 @@ public class SerialPortTtys1Service extends Service {
             serialPort_ttyS1 = null;
         }
         super.onDestroy();
-        Log.d("Sttys1Service","destory executed");
+        Log.d(TAG ,"destory executed");
     }
+
+    /**
+     * 每次都会在服务启动后调用，service start
+     * @param intent
+     * @param flags
+     * @param startId
+     * @return
+     */
     @Override
     public  int onStartCommand(Intent intent,int flags,int startId){
-        Log.d("serialPortTtyS1","service go to run");
+        Log.d(TAG ,"service go to run");
         return  super.onStartCommand(intent,flags,startId);
     }
 
@@ -98,11 +110,11 @@ public class SerialPortTtys1Service extends Service {
     * */
     protected void onDataReceived(final byte[] data){
         if(data[0]==-1 && data[1]==-1){
-            Log.e("serialPortttyS1","error");
+            Log.e(TAG ,"error");
         }else {
             int [] receive = Transform.toReceiveNews(data);
             long [] result_temp = DCAnalogHandler.handleInformaton(receive);
-            Log.d("SerialPortttys1Service","receive int[]"+receive[0]);
+            Log.d(TAG ,"receive int[]"+receive[0]);
 
             //广播传值
             Intent intentTtyS1 = new Intent();

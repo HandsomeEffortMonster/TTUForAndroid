@@ -134,9 +134,9 @@ public class ExportBeanExcel<T> {
             e.printStackTrace();
         }
     }
-    /*
+/*    *//*
         使用例子
-    */
+    *//*
     public static void main(String [] args){
         List<String> listName = new ArrayList<>();
         listName.add("名字");
@@ -153,5 +153,5 @@ public class ExportBeanExcel<T> {
         ExportBeanExcel<UserBean> exportBeanExcelUtil = new ExportBeanExcel();
         exportBeanExcelUtil.exportExcel("测试POI导出EXCEL文档",listName,listId,list);
 
-    }
+    }*/
 }

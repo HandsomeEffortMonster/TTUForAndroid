@@ -28,6 +28,7 @@ import android_serialport_api.SerialUtilOld;
 
 public class SerialPortService extends Service{
 
+    private static final String TAG ="SerialPortTtys2Service";
     SerialUtilOld serialPort_ttyS2;
     private String path = "/dev/ttyS2";
     private int baudrate = 115200;
@@ -60,7 +61,7 @@ public class SerialPortService extends Service{
             readThread = new ReadThread();
             readThread.start();
         }
-        Log.d("Sttys2Service","oncreate executed");
+        Log.d(TAG,"oncreate executed");
     }
 
     @Override
@@ -72,12 +73,12 @@ public class SerialPortService extends Service{
             serialPort_ttyS2= null;
         }
         super.onDestroy();
-        Log.d("Sttys2Service","destory executed");
+        Log.d(TAG,"destory executed");
     }
 
     @Override
     public int onStartCommand(Intent intent,int flags,int startId){
-        Log.d("serialPortTtyS2","service go to run");
+        Log.d(TAG,"service go to run");
         return super.onStartCommand(intent,flags,startId);
     }
 
@@ -112,14 +113,14 @@ public class SerialPortService extends Service{
     * */
     protected void onDataReceived(final byte[] data){
         if(data[0]==-1&&data[1]==-1){
-            Log.e("serialPortttyS2","error");
+            Log.e(TAG,"error");
         }else {
 
             //receive_tv.append(bytesToHexFun1(data));
             int[] receive =  Transform.toReceiveNews(data);
             long [] result = Att7022eHandler.handleInformation(receive);
             // (new Integer(data[i]<0?256+data[i]:data[i]).toString())
-            Log.d("SerialPortttys2Service","receive int[]"+receive[0]);
+            Log.d(TAG,"receive int[]"+receive[0]);
 
 
 

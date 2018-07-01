@@ -16,6 +16,8 @@ import android_serialport_api.SerialUtilOld;
  */
 public class SerialPortTtys0Service extends Service {
 
+    private static final String TAG ="SerialPortTtys0Service";
+
     SerialUtilOld serialPort_ttyS0;
     private String path = "/dev/ttyS0";
     private int baudrate = 115200;
@@ -47,7 +49,7 @@ public class SerialPortTtys0Service extends Service {
             readThread = new ReadThread();
             readThread.start();
         }
-        Log.d("Sttys0Service","oncreate executed");
+        Log.d(TAG,"oncreate executed");
     }
 
     @Override
@@ -59,12 +61,12 @@ public class SerialPortTtys0Service extends Service {
             serialPort_ttyS0 = null;
         }
         super.onDestroy();
-        Log.d("Sttys0Service","destory executed");
+        Log.d(TAG,"destory executed");
     }
 
     @Override
     public  int onStartCommand(Intent intent,int flags,int startId){
-        Log.d("serialPortTtyS1","service go to run");
+        Log.d(TAG,"service go to run");
         return  super.onStartCommand(intent,flags,startId);
     }
 
@@ -95,11 +97,11 @@ public class SerialPortTtys0Service extends Service {
     * */
     protected void onDataReceived(final  byte[] data){
         if(data[0]==-1 && data[1]==-1){
-            Log.e("serialPortttyS0","error");
+            Log.e(TAG,"error");
         }else {
             int [] receive = Transform.toReceiveNews(data);
             int [] result_temp = StateHandler.handleInformaton(receive);
-            Log.d("SerialPortttys1Service","receive int[]"+receive[0]);
+            Log.d(TAG,"receive int[]"+receive[0]);
 
             //广播传值
             Intent intentTtyS0 = new Intent();

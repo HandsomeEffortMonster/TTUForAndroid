@@ -14,8 +14,10 @@ import android.widget.SimpleAdapter;
 import android.widget.Toast;
 
 import com.lzh.Bean.ElectricBean;
+import com.lzh.constant.ConstantValue;
 import com.lzh.dao.ElectricDao;
 import com.lzh.tools.OrmLiteHelper;
+
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -58,6 +60,24 @@ public class HistoricalActivity extends AppCompatActivity implements View.OnClic
         /*获取总条数  然后获取最近10条*/
         long num = electricDao.getCount();
         List<ElectricBean> electricBeens = electricDao.queryForNum(num-15);//获取最近15条
+        //模拟时候用的  软著要截图nnd
+/*        ElectricBean electricBeanTest = new ElectricBean();
+        electricBeanTest.setCurrentA(5);
+        electricBeanTest.setCurrentB(3);
+        electricBeanTest.setCurrentC(6);
+        electricBeanTest.setApparentA(1000);
+        electricBeanTest.setApparentB(630);
+        electricBeanTest.setApparentC(1398);
+        electricBeanTest.setVoltageA(220);
+        electricBeanTest.setVoltageB(210);
+        electricBeanTest.setVoltageC(233);
+        electricBeanTest.setAveragePowerA(1100);
+        electricBeanTest.setAveragePowerA(630);
+        electricBeanTest.setAveragePowerA(1398);
+        List<ElectricBean> electricBeens = new ArrayList<>();
+        for(int i=0;i<15;i++){
+            electricBeens.add(electricBeanTest);
+        }*/
 
         List<HashMap<String,Object>> data = new ArrayList<>();
         for(ElectricBean electricBean:electricBeens){

@@ -18,6 +18,7 @@ import java.util.List;
  */
 
 public class ElectricDao {
+    private static final String TAG ="ElectricDao";
     private Context context;
     private Dao<ElectricBean,Integer> electricDao;
     private OrmLiteHelper ormLiteHelper;
@@ -32,7 +33,7 @@ public class ElectricDao {
         try{
             ormLiteHelper = ormLiteHelper.getHelper(context);
             electricDao = ormLiteHelper.getDao(ElectricBean.class);
-            Log.i("electricDao","create Successfully");
+            Log.i(TAG ,"create Successfully");
         }catch (SQLException e){
             e.printStackTrace();
         }

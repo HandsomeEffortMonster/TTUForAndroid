@@ -52,8 +52,7 @@ public class ElectricActivity extends AppCompatActivity implements View.OnClickL
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_electric);
         init();
-        //启动服务
-        startService(new Intent(ElectricActivity.this, SerialPortService.class));
+
         //动态注册注册广播接收器  需要响应位置销毁广播
         //new Handler需要注意一下详情见stateShowActivity
         sttys2Receiver = new Sttys2Receiver(new Handler());
@@ -64,8 +63,7 @@ public class ElectricActivity extends AppCompatActivity implements View.OnClickL
     }
     @Override
     protected void onDestroy() {
-        //结束服务
-        stopService(new Intent(ElectricActivity.this,SerialPortService.class));
+
         if(sttys2Receiver != null){
             unregisterReceiver(sttys2Receiver);//这销毁广播
         }

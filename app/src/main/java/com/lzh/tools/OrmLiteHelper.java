@@ -20,6 +20,7 @@ import java.util.Map;
  */
 
 public class OrmLiteHelper extends OrmLiteSqliteOpenHelper {
+    private static final String TAG ="OrmLiteHelper";
     /*
     * 数据库名字
     * */
@@ -68,7 +69,7 @@ public class OrmLiteHelper extends OrmLiteSqliteOpenHelper {
         //创建表
         try{
             TableUtils.createTable(connectionSource, ElectricBean.class);
-            Log.i("ElectricBean","create table");
+            Log.i(TAG ,"create table");
         }catch (SQLException e){
             e.printStackTrace();
         }
@@ -87,7 +88,7 @@ public class OrmLiteHelper extends OrmLiteSqliteOpenHelper {
         try{
             TableUtils.dropTable(connectionSource,ElectricBean.class,true);
             TableUtils.createTable(connectionSource, ElectricBean.class);
-            Log.i("Electricdb","create onUpgrade");
+            Log.i(TAG ,"create onUpgrade");
         }catch (SQLException e){
             e.printStackTrace();
         }

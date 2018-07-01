@@ -55,8 +55,7 @@ public class dcAnalogActivity extends AppCompatActivity implements View.OnClickL
         setContentView(R.layout.activity_dc_analog);
         context = dcAnalogActivity.this;
         init();
-        //启动服务
-        startService(new Intent(dcAnalogActivity.this, SerialPortTtys1Service.class));
+
         //注册广播接收器
         //这里需要注意下 new handler将其交给UI线程工作
         sttys1Receiver = new Sttys1Receiver(new Handler());
@@ -68,8 +67,7 @@ public class dcAnalogActivity extends AppCompatActivity implements View.OnClickL
 
     @Override
     protected void onDestroy(){
-        //结束服务
-        stopService(new Intent(dcAnalogActivity.this,SerialPortTtys1Service.class));
+
         if(sttys1Receiver != null){
             unregisterReceiver(sttys1Receiver);
             //及时销毁广播 非常必要 receiver绑定了activity的引用
